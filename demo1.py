@@ -289,6 +289,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from docx import Document
 from flask_cors import CORS
+from flask_cors import cross_origin
 import pandas as pd
 import os
 from dotenv import load_dotenv
@@ -485,6 +486,7 @@ def home():
     return "API is running"
 
 @app.route('/generate', methods=['POST'])
+@cross_origin(origin='https://quesgeni.netlify.app')
 def generate():
     try:
         print("Request form:", request.form)
