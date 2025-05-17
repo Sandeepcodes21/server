@@ -202,6 +202,9 @@ def generate_case_questions(subject_name, syllabus, num_case):
 
     return chain.invoke({})
 SetsNum=0
+@app.route('/', methods=['GET'])
+def home():
+    return "API is running"
 @app.route('/generate', methods=['POST'])
 def generate():
     try:
