@@ -297,7 +297,7 @@ from dotenv import load_dotenv
 load_dotenv()  # Load environment variables from .env file (for local dev)
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
+CORS(app, resources={r"/*": {"origins": "https://quesgeni.netlify.app"}}) # Enable CORS
 
 llm = ChatGroq(
     temperature=0.5,
